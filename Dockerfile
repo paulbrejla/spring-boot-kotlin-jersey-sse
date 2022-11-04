@@ -6,7 +6,7 @@ ENV APP_NAME webhook-consumer
 WORKDIR $APP_HOME
 ADD . $APP_HOME
 
-RUN ./gradlew build
+RUN ./gradlew build -x test
 
 EXPOSE 80
 
