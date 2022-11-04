@@ -1,4 +1,4 @@
-FROM amazoncorretto:11
+FROM amazoncorretto:17
 
 ENV APP_HOME /usr/src/app
 ENV APP_NAME webhook-consumer
