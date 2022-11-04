@@ -7,5 +7,5 @@ import javax.ws.rs.sse.SseEventSink
 
 interface EventService {
     fun addEventSink(eventSink: SseEventSink, listenerId: String)
-    fun sendEvent(listenerId: String, payload: JSONObject, headers: MultivaluedMap<String, String>)
+    fun sendEvent(listenerId: String, payload: Any, headers: MultivaluedMap<String, String>)
 }

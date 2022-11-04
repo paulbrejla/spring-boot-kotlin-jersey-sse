@@ -2,6 +2,7 @@ package de.paulbrejla.webhookconsumer.rest.api
 
 import org.glassfish.jersey.inject.hk2.RequestContext
 import org.json.JSONObject
+import org.springframework.web.bind.annotation.RequestBody
 import javax.ws.rs.*
 import javax.ws.rs.core.Context
 import javax.ws.rs.core.HttpHeaders
@@ -17,7 +18,7 @@ interface EventWsV1 {
     @POST
     @Path("/messages/{listenerId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    fun receivePayload(body: JSONObject, @PathParam(value = "listenerId") listenerId: String, @Context context: HttpHeaders): Response
+    fun receivePayload(body: Any, @PathParam(value = "listenerId") listenerId: String, @Context context: HttpHeaders): Response
 
     /**
      * Register an event listener.

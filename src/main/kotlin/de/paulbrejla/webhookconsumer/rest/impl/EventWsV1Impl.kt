@@ -16,7 +16,7 @@ import javax.ws.rs.sse.SseEventSink
 @Component("eventWsV1")
 class EventWsV1Impl(val eventService: EventService) : EventWsV1 {
     override fun receivePayload(
-        body: JSONObject,
+        body: Any,
         @PathParam(value = "listenerId") listenerId: String,
         @Context context: HttpHeaders
     ): Response {

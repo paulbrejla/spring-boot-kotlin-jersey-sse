@@ -22,7 +22,7 @@ class EventServiceImpl : EventService {
         eventSinks[listenerId] = eventSink
     }
 
-    override fun sendEvent(listenerId: String, payload: JSONObject, headers: MultivaluedMap<String, String>) {
+    override fun sendEvent(listenerId: String, payload: Any, headers: MultivaluedMap<String, String>) {
         val eventBuilder = OutboundEvent.Builder()
         eventBuilder.name("event_$listenerId")
         eventBuilder.data(
